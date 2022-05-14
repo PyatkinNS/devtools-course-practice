@@ -9,7 +9,7 @@
 
 template <typename T>
 class THeap {
-public:
+ public:
     THeap() = default;
     THeap(const THeap<T>& heap) { vec = heap.vec; }
     void Push(T value);
@@ -20,7 +20,7 @@ public:
     THeap<T>& operator = (const THeap<T>& heap) = default;
     std::vector<T> GetVectorHeap();
 
-private:
+ private:
     std::vector<T> vec;
     void Emersion();
     int GetParent(int child);
@@ -98,8 +98,7 @@ void THeap<T>::Immersion() {
         if (largest != parent) {
             Swap(largest, parent);
             parent = largest;
-        }
-        else {
+        } else {
             break;
         }
     }
